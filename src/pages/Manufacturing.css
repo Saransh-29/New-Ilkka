@@ -1,0 +1,185 @@
+/* ── MANUFACTURING UNITS GRID ── */
+.mfg-units-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 28px;
+    margin-top: 52px;
+  }
+  
+  /* ── UNIT CARD: horizontal split ── */
+  .mfg-unit-card {
+    display: flex;
+    flex-direction: column;
+    border-radius: var(--r-lg);
+    overflow: hidden;
+    border: 1px solid var(--g200);
+    transition: transform 0.45s var(--spring), box-shadow 0.45s var(--spring);
+  }
+  
+  .mfg-unit-card:hover {
+    transform: translateY(-7px);
+    box-shadow: var(--sh-d);
+  }
+  
+  /* ── DARK ACCENT PANEL (top) ── */
+  .mfg-unit-accent {
+    background: linear-gradient(135deg, var(--g-deep) 0%, var(--g-rich) 100%);
+    padding: 36px 36px 32px;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .mfg-unit-accent::after {
+    content: '';
+    position: absolute;
+    top: -40px;
+    right: -40px;
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    border: 1px solid rgba(168, 200, 182, 0.15);
+  }
+  
+  .mfg-unit-accent::before {
+    content: '';
+    position: absolute;
+    bottom: -20px;
+    right: 20px;
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    border: 1px solid rgba(168, 200, 182, 0.1);
+  }
+  
+  .mfg-unit-id {
+    font-family: var(--fu);
+    font-size: 0.62rem;
+    font-weight: 700;
+    letter-spacing: 0.22em;
+    text-transform: uppercase;
+    color: var(--g-light);
+    opacity: 0.7;
+    margin-bottom: 14px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .mfg-unit-accent-name {
+    font-family: var(--fd);
+    font-size: 2rem;
+    font-weight: 300;
+    color: var(--ivory);
+    line-height: 1.15;
+    margin-bottom: 20px;
+    position: relative;
+    z-index: 1;
+  }
+  
+  .mfg-unit-cert {
+    font-family: var(--fu);
+    font-size: 0.6rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--g-light);
+    padding: 5px 14px;
+    border: 1px solid rgba(168, 200, 182, 0.3);
+    border-radius: 100px;
+    display: inline-block;
+    position: relative;
+    z-index: 1;
+  }
+  
+  /* ── LIGHT BODY PANEL (bottom) ── */
+  .mfg-unit-body {
+    background: var(--w);
+    padding: 32px 36px 36px;
+    flex: 1;
+  }
+  
+  .mfg-unit-loc {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--fu);
+    font-size: 0.62rem;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--g400);
+    margin-bottom: 10px;
+  }
+  
+  .mfg-unit-loc::before {
+    content: '';
+    display: inline-block;
+    width: 14px;
+    height: 1px;
+    background: var(--g400);
+    opacity: 0.5;
+  }
+  
+  .mfg-unit-cap {
+    font-family: var(--fu);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--g-sage);
+    margin-bottom: 16px;
+  }
+  
+  .mfg-unit-desc {
+    font-size: 0.92rem;
+    color: var(--g600);
+    line-height: 1.78;
+    margin: 0;
+  }
+  
+  /* ── QMS GRID ── */
+  .qms-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+  
+  .qms-card {
+    background: var(--w);
+    border: 1px solid var(--g200);
+    border-radius: var(--r-md);
+    padding: 32px 28px;
+    transition: transform 0.4s var(--spring), box-shadow 0.4s;
+  }
+  
+  .qms-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--sh-m);
+  }
+  
+  .qms-icon {
+    font-size: 1.1rem;
+    color: var(--g-sage);
+    margin-bottom: 16px;
+  }
+  
+  .qms-card h4 {
+    font-family: var(--fd);
+    font-size: 1.3rem;
+    font-weight: 400;
+    color: var(--g-deep);
+    margin-bottom: 10px;
+  }
+  
+  .qms-card p {
+    font-size: 0.88rem;
+    color: var(--g600);
+    line-height: 1.75;
+  }
+  
+  /* ── RESPONSIVE ── */
+  @media (max-width: 900px) {
+    .mfg-units-grid,
+    .qms-grid {
+      grid-template-columns: 1fr;
+    }
+  }

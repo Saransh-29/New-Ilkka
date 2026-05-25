@@ -1,0 +1,15 @@
+.c-dot {
+    position:fixed; width:8px; height:8px; background:var(--g-deep);
+    border-radius:50%; pointer-events:none; z-index:9999;
+    transform:translate(-50%,-50%);
+    transition:width 0.3s var(--spring), height 0.3s var(--spring), background 0.3s;
+  }
+  .c-ring {
+    position:fixed; width:38px; height:38px;
+    border:1.5px solid var(--g-sage); border-radius:50%;
+    pointer-events:none; z-index:9998; transform:translate(-50%,-50%);
+    transition:width 0.4s var(--spring), height 0.4s var(--spring), border-color 0.3s;
+  }
+  .c-dot.h { width:14px; height:14px; background:var(--g-sage); }
+  .c-ring.h { width:56px; height:56px; border-color:var(--g-mid); }
+  @media(pointer:coarse){ .c-dot,.c-ring{display:none} body{cursor:auto} }
