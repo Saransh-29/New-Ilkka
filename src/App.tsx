@@ -1,4 +1,5 @@
-import { Route, Routes } from 'react-router-dom';
+import { useEffect } from 'react';
+import { Route, Routes, useLocation } from 'react-router-dom';
 import Footer from './components/layout/Footer';
 import Navbar from './components/layout/Navbar';
 import Cursor from './components/ui/Cursor';
@@ -12,9 +13,18 @@ import Products from './pages/Products';
 import Research from './pages/Research';
 import Sustainability from './pages/Sustainability';
 
+function ScrollToTop() {
+  const { pathname } = useLocation();
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+  return null;
+}
+
 export default function App() {
   return (
     <>
+      <ScrollToTop />
       <Cursor />
       <Navbar />
       <Routes>
