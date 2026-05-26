@@ -16,7 +16,7 @@ export default function Footer() {
             solutions in Gynaecology and Infertility across India.
           </p>
           <div className="footer-certs">
-            {['WHO-GMP', 'ISO Compliant', 'Tablets', 'Capsules', 'Syrups', 'Injectables'].map((c) => (
+            {['WHO-GMP', 'ISO Compliant', 'Tablets', 'Capsules'].map((c) => (
               <span key={c}>{c}</span>
             ))}
           </div>
@@ -39,7 +39,6 @@ export default function Footer() {
           <Link to="/contact">Contact Us</Link>
           <a href="#">LinkedIn</a>
           <a href="#">Twitter / X</a>
-          <a href="#">Investor Relations</a>
         </div>
       </div>
       <div className="footer-bottom container">
