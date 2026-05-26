@@ -25,4 +25,17 @@
 .rs-val { font-family:var(--fd); font-size:2.8rem; font-weight:300; color:var(--g-deep); line-height:1; margin-bottom:8px; }
 .rs-label { font-size:0.84rem; color:var(--g600); }
 
-@media(max-width:900px){ .pillars-grid{ grid-template-columns:1fr; } }
+/* ── RESPONSIVE ── */
+@media(max-width:900px) {
+  .pillars-grid { grid-template-columns:1fr; }
+  .pillar-card { padding:36px 32px; }
+}
+
+@media(max-width:600px) {
+  .pillars-grid { gap:16px; margin-top:36px; }
+  .pillar-card { padding:28px 24px; }
+  .pillar-card h3 { font-size:1.5rem; }
+  .pillar-num { font-size:4rem; }
+  .research-stat-card { padding:28px 20px; }
+  .rs-val { font-size:2.2rem; }
+}
