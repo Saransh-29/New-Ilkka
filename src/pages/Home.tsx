@@ -52,7 +52,7 @@ export default function Home() {
           <div className="hero-left">
             <div className="hero-tag tag">Established {COMPANY.founded} · {COMPANY.headquarters}</div>
             <h1 className="hero-title">
-              Innovating for a<br/>Healthier <em>Tomorrow</em>
+              Innovating for a<br />Healthier <em>Tomorrow</em>
             </h1>
             <p className="hero-sub lead">ILKKA Healthcare Private Limited delivers high-quality, affordable medicines in Gynaecology and Infertility — guided by integrity, innovation, and ethical practice.</p>
             <div className="hero-btns">
@@ -60,7 +60,7 @@ export default function Home() {
               <Link to="/research" className="btn btn-outline"><span>Our Research →</span></Link>
             </div>
             <div className="hero-trust">
-              {['WHO-GMP Practices','ISO Compliant','Gynaecology','Infertility'].map(t => (
+              {['WHO-GMP Practices', 'ISO Compliant', 'Gynaecology', 'Infertility'].map(t => (
                 <div key={t} className="trust-badge">{t}</div>
               ))}
             </div>
@@ -91,7 +91,7 @@ export default function Home() {
         <div className="container">
           <div ref={s1} className={`section-head reveal ${v1 ? 'visible' : ''}`}>
             <div className="tag">Our Portfolio</div>
-            <h2 className="display">Gynaecology &<br/><em>Infertility</em></h2>
+            <h2 className="display">Gynaecology &<br /><em>Infertility</em></h2>
             <p className="lead">
               We specialise in tablets, capsules, syrups, and injectables across two focused therapeutic areas —
               meeting patient needs and improving treatment outcomes nationwide.
@@ -123,7 +123,7 @@ export default function Home() {
           </div>
           <div className="grid-3" style={{ marginTop: '32px' }}>
             {featured.map((p, i) => (
-              <div key={p.id} className={`card product-card reveal d${i+1} ${v2 ? 'visible' : ''}`}>
+              <div key={p.id} className={`card product-card reveal d${i + 1} ${v2 ? 'visible' : ''}`}>
                 <div className="product-card-img" style={{ background: p.color }}>
                   {p.image ? (
                     <img src={p.image} alt={p.name} className="product-card-photo" />
@@ -136,7 +136,11 @@ export default function Home() {
                 </div>
                 <div className="product-card-body">
                   <span className="product-tag">{p.tag}{p.form ? ` · ${p.form}` : ''}</span>
-                  <div className="product-name">{p.name}</div>
+                  {p.nameImage ? (
+                    <img src={p.nameImage} alt={p.name} className="product-name-img" />
+                  ) : (
+                    <div className="product-name">{p.name}</div>
+                  )}
                   <p className="product-desc">{p.description}</p>
                   <Link to="/products" className="product-link">View Details →</Link>
                 </div>
@@ -155,7 +159,7 @@ export default function Home() {
           <div className="research-band-grid">
             <div ref={s3} className={`reveal ${v3 ? 'visible' : ''}`}>
               <div className="tag tag-light">Research & Innovation</div>
-              <h2 className="display display-light">Where Science<br/>Meets <em>Compassion</em></h2>
+              <h2 className="display display-light">Where Science<br />Meets <em>Compassion</em></h2>
               <p className="lead lead-light" style={{ marginBottom: '36px' }}>Our Associate R&D division continuously improves gynaecology and infertility formulations — keeping ILKKA at the forefront of practical, patient-centred innovation.</p>
               <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
                 <Link to="/research" className="btn btn-light"><span>Explore Research →</span></Link>
@@ -163,7 +167,7 @@ export default function Home() {
               </div>
             </div>
             <div className="research-band-stats">
-              {[['2','Core Therapeutic Areas'],['4','Dosage Forms'],['WHO','GMP Aligned'],['CSR','Community Programs']].map(([v,l]) => (
+              {[['2', 'Core Therapeutic Areas'], ['4', 'Dosage Forms'], ['WHO', 'GMP Aligned'], ['CSR', 'Community Programs']].map(([v, l]) => (
                 <div key={l} className="rb-stat">
                   <div className="rb-stat-val">{v}</div>
                   <div className="rb-stat-label">{l}</div>
@@ -179,11 +183,11 @@ export default function Home() {
         <div className="container">
           <div ref={s4} className={`section-head reveal ${v4 ? 'visible' : ''}`}>
             <div className="tag">Latest Insights</div>
-            <h2 className="display">From Our Lab<br/>to Your <em>World</em></h2>
+            <h2 className="display">From Our Lab<br />to Your <em>World</em></h2>
           </div>
           <div className="grid-3" style={{ marginTop: '52px' }}>
             {featuredBlogs.map((b, i) => (
-              <div key={b.id} className={`card blog-card reveal d${i+1} ${v4 ? 'visible' : ''}`}>
+              <div key={b.id} className={`card blog-card reveal d${i + 1} ${v4 ? 'visible' : ''}`}>
                 <div className="blog-img" style={{ background: b.color }} />
                 <div className="blog-body">
                   <div className="blog-meta"><span className="blog-cat">{b.category}</span><span className="blog-date">{b.date}</span></div>
@@ -205,7 +209,7 @@ export default function Home() {
         <div className="container">
           <div ref={s5} className={`partners-row reveal ${v5 ? 'visible' : ''}`}>
             <span className="partners-label">Our core values</span>
-            {['Integrity','Quality','Innovation','Customer Focus','Commitment','Ethical Practice'].map(p => (
+            {['Integrity', 'Quality', 'Innovation', 'Customer Focus', 'Commitment', 'Ethical Practice'].map(p => (
               <div key={p} className="partner-name">{p}</div>
             ))}
           </div>
@@ -215,7 +219,7 @@ export default function Home() {
       {/* ── CTA ── */}
       <section className="home-cta">
         <div className="container">
-          <h2 className="display display-light" style={{ textAlign: 'center' }}>Ready to <em>Partner</em><br/>With Us?</h2>
+          <h2 className="display display-light" style={{ textAlign: 'center' }}>Ready to <em>Partner</em><br />With Us?</h2>
           <p className="lead lead-light" style={{ textAlign: 'center', margin: '0 auto 40px' }}>Connect with our team to explore distribution partnerships, research collaborations, or product enquiries.</p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
             <Link to="/contact" className="btn btn-primary"><span>Get In Touch</span></Link>

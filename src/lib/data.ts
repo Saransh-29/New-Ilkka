@@ -44,6 +44,7 @@ export const PRODUCTS: Product[] = [
     indication: '1st trimester — NTD, REPL, congenital abnormalities',
     color: '#fde8ef',
     image: '/products/catalog/product_03.png',
+    nameImage: '/products/p_name/foll9.png',
   },
   {
     id: 'foll9d',
@@ -56,6 +57,7 @@ export const PRODUCTS: Product[] = [
     indication: '2nd trimester to lactation — IUGR, pre-eclampsia, pre-term birth',
     color: '#e8eef8',
     image: '/products/catalog/product_04.png',
+    nameImage: '/products/p_name/foll9D.png',
   },
   {
     id: 'foll9nv',
@@ -68,6 +70,7 @@ export const PRODUCTS: Product[] = [
     indication: 'Nausea & vomiting in pregnancy',
     color: '#e0f0fc',
     image: '/products/catalog/product_05.png',
+    nameImage: '/products/p_name/foll9NV.png',
   },
   {
     id: 'ilcageston10',
@@ -80,6 +83,7 @@ export const PRODUCTS: Product[] = [
     indication: 'Luteal support, threatened pregnancy loss, habitual miscarriage',
     color: '#fce8f3',
     image: '/products/catalog/product_10.jpeg',
+    nameImage: '/products/p_name/ilcageston10.png',
   },
   {
     id: 'ilcagest-sr',
@@ -92,6 +96,7 @@ export const PRODUCTS: Product[] = [
     indication: 'BOH, LPD, LPS in ART, DUB, secondary amenorrhea',
     color: '#e5f5e8',
     image: '/products/catalog/product_12.jpeg',
+    nameImage: '/products/p_name/ilcagestSR.png',
   },
   {
     id: 'ilca-d3',
@@ -104,6 +109,7 @@ export const PRODUCTS: Product[] = [
     indication: 'Vitamin D deficiency, bone health, immunity',
     color: '#fff3e6',
     image: '/products/catalog/product_14.jpeg',
+    nameImage: '/products/p_name/ilcaD3.png',
   },
   {
     id: 'rosso-xt',
@@ -116,6 +122,7 @@ export const PRODUCTS: Product[] = [
     indication: 'Anaemia in pregnancy & lactation',
     color: '#fde8e8',
     image: '/products/catalog/product_17.png',
+    nameImage: '/products/p_name/rossoXT.png',
   },
   {
     id: 'ilcal',
@@ -128,6 +135,7 @@ export const PRODUCTS: Product[] = [
     indication: 'Pregnancy, lactation, low back pain, post-menopausal osteoporosis',
     color: '#fce8ec',
     image: '/products/catalog/product_19.png',
+    nameImage: '/products/p_name/ilcal.png',
   },
   {
     id: 'ilpreg',
@@ -140,6 +148,7 @@ export const PRODUCTS: Product[] = [
     indication: 'Pregnancy support, IUGR, poor ovarian responders',
     color: '#fce8f5',
     image: '/products/catalog/product_20.png',
+    nameImage: '/products/p_name/ilpregSachet.png',
   },
   {
     id: 'mayonika',
@@ -152,6 +161,7 @@ export const PRODUCTS: Product[] = [
     indication: 'PCOS — insulin resistance, ovulation, embryo quality',
     color: '#fde8f8',
     image: '/products/catalog/product_24.jpeg',
+    nameImage: '/products/p_name/mayonika.png',
   },
   {
     id: 'mayonika-ds',
@@ -164,6 +174,7 @@ export const PRODUCTS: Product[] = [
     indication: 'PCOS/PCOD, irregular menses, diabetic women improving conception',
     color: '#fff0e6',
     image: '/products/catalog/product_26.jpeg',
+    nameImage: '/products/p_name/mayonikaDS.png',
   },
   {
     id: 'utika-ll',
@@ -176,6 +187,7 @@ export const PRODUCTS: Product[] = [
     indication: 'ART outcomes, PCOS, BV, endometriosis, UTI, PID',
     color: '#f5e8f0',
     image: '/products/catalog/product_29.jpeg',
+    nameImage: '/products/p_name/utikaLL.png',
   },
   {
     id: 'utika-susp',
@@ -188,6 +200,7 @@ export const PRODUCTS: Product[] = [
     indication: 'Recurrent UTI, renal calculus, burning micturition',
     color: '#e8f5fa',
     image: '/products/catalog/product_30.png',
+    nameImage: '/products/p_name/utikaSuspension.png',
   },
   {
     id: 'utika-tab',
@@ -200,6 +213,7 @@ export const PRODUCTS: Product[] = [
     indication: 'Urinary tract infection — prevention & recurrence',
     color: '#f0ebe8',
     image: '/products/catalog/product_31.png',
+    nameImage: '/products/p_name/utikaTablet.png',
   },
   {
     id: 'utika-syrup',
@@ -212,6 +226,7 @@ export const PRODUCTS: Product[] = [
     indication: 'Dysfunctional bleeding, menorrhagia, leucorrhoea, menstrual disorders',
     color: '#fff8e6',
     image: '/products/catalog/product_32.png',
+    nameImage: '/products/p_name/utikaSyrup.png',
   },
   {
     id: 'protika',
@@ -224,6 +239,7 @@ export const PRODUCTS: Product[] = [
     indication: 'Pregnancy & lactation nutrition',
     color: '#fde8ea',
     image: '/products/catalog/product_33.jpeg',
+    nameImage: '/products/p_name/protika.png',
   },
   {
     id: 'crepiter',
@@ -236,6 +252,7 @@ export const PRODUCTS: Product[] = [
     indication: 'Male infertility — sperm count, motility, morphology',
     color: '#ebe8f8',
     image: '/products/catalog/product_07.png',
+    nameImage: '/products/p_name/crepiter.png',
   },
   {
     id: 'ilcadhea',
@@ -248,6 +265,7 @@ export const PRODUCTS: Product[] = [
     indication: 'DOR, POR, advanced maternal age, PCOS, recurrent IVF failure',
     color: '#ede8f5',
     image: '/products/catalog/product_22.png',
+    nameImage: '/products/p_name/ilcadhea.png',
   },
   {
     id: 'iltroz',
@@ -260,6 +278,7 @@ export const PRODUCTS: Product[] = [
     indication: 'Ovulation induction — PCOS, CC-resistant cases, IVF protocols',
     color: '#e8f0fa',
     image: '/products/catalog/product_28.jpeg',
+    nameImage: '/products/p_name/iltroz.png',
   },
 ];
 

@@ -109,7 +109,11 @@ export default function Products() {
                       )}
                     </div>
                     <div className="pfc-body">
-                      <div className="pfc-name">{p.name}</div>
+                      {p.nameImage ? (
+                        <img src={p.nameImage} alt={p.name} className="pfc-name-img" />
+                      ) : (
+                        <div className="pfc-name">{p.name}</div>
+                      )}
                       <div className="pfc-comp">
                         {p.form ? `${p.form} · ` : ''}
                         {p.composition}
@@ -145,9 +149,13 @@ export default function Products() {
             </div>
             <div className="modal-body">
               <div className="tag">{selected.tag}</div>
-              <h2 id="product-modal-title" className="modal-title">
-                {selected.name}
-              </h2>
+              {selected.nameImage ? (
+                <img src={selected.nameImage} alt={selected.name} className="modal-name-img" />
+              ) : (
+                <h2 id="product-modal-title" className="modal-title">
+                  {selected.name}
+                </h2>
+              )}
               <p className="modal-desc">{selected.description}</p>
               <div className="modal-info">
                 {selected.form && (
