@@ -16,7 +16,7 @@ export default function Footer() {
             solutions in Gynaecology and Infertility across India.
           </p>
           <div className="footer-certs">
-            {['WHO-GMP', 'ISO Compliant', 'Tablets', 'Capsules'].map((c) => (
+            {['WHO-GMP', 'ISO Compliant', 'Tablets', 'Capsules', 'Syrups'].map((c) => (
               <span key={c}>{c}</span>
             ))}
           </div>

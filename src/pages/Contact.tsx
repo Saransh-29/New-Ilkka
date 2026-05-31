@@ -52,7 +52,7 @@ export default function Contact() {
                 </label>
                 <label style={{ display: 'block', marginBottom: 16 }}>
                   <span style={{ fontFamily: 'var(--fu)', fontSize: '0.7rem', letterSpacing: '0.1em' }}>EMAIL</span>
-                  <input type="email" required style={{ width: '100%', marginTop: 8, padding: '12px 14px', borderRadius: 8, border: '1.5px solid var(--g200)' }} />
+                  <input type="email" required style={{ width: '100%', marginTop: 8, padding: '15px 14px', borderRadius: 10, border: '1.5px solid var(--g200)' }} />
                 </label>
                 <label style={{ display: 'block', marginBottom: 20 }}>
                   <span style={{ fontFamily: 'var(--fu)', fontSize: '0.7rem', letterSpacing: '0.1em' }}>MESSAGE</span>
