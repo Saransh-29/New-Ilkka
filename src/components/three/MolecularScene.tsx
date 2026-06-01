@@ -5,12 +5,14 @@ export default function MolecularScene() {
   const mountRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
+    if (window.innerWidth < 900) return; // skip Three.js entirely on mobile
+
     const mount = mountRef.current!;
     const W = mount.clientWidth || 600;
     const H = mount.clientHeight || 500;
 
-    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+    const renderer = new THREE.WebGLRenderer({ antialias: false, alpha: true });
+    renderer.setPixelRatio(1); // force 1x on all devices for performance
     renderer.setSize(W, H);
     renderer.setClearColor(0x000000, 0);
     mount.appendChild(renderer.domElement);
@@ -73,7 +75,7 @@ export default function MolecularScene() {
     scene.add(helix);
     const hm0 = new THREE.MeshPhysicalMaterial({ color: 0x2d5a42, roughness: 0.3, metalness: 0.12 });
     const hm1 = new THREE.MeshPhysicalMaterial({ color: 0xa8c8b6, roughness: 0.3, metalness: 0.08 });
-    const rm  = new THREE.MeshPhysicalMaterial({ color: 0x6f9a84, roughness: 0.5, transparent: true, opacity: 0.55 });
+    const rm = new THREE.MeshPhysicalMaterial({ color: 0x6f9a84, roughness: 0.5, transparent: true, opacity: 0.55 });
     for (let i = 0; i < 44; i++) {
       const t = i / 44, ang = t * Math.PI * 6, y = (t - 0.5) * 13, rad = 1.3;
       const s0 = new THREE.Mesh(new THREE.SphereGeometry(0.13, 12, 12), hm0.clone());
@@ -140,8 +142,8 @@ export default function MolecularScene() {
       particles.forEach(p => {
         p.mesh.position.x += p.vx; p.mesh.position.y += p.vy + Math.sin(t * p.sp + p.phase) * 0.004; p.mesh.position.z += p.vz;
         if (p.mesh.position.x < 1 || p.mesh.position.x > 14) p.vx *= -1;
-        if (Math.abs(p.mesh.position.y) > 9)  p.vy *= -1;
-        if (Math.abs(p.mesh.position.z) > 5)  p.vz *= -1;
+        if (Math.abs(p.mesh.position.y) > 9) p.vy *= -1;
+        if (Math.abs(p.mesh.position.z) > 5) p.vz *= -1;
       });
 
       lineTick++;
@@ -151,7 +153,7 @@ export default function MolecularScene() {
         c.group.position.x += c.vx; c.group.position.y += c.vy + Math.sin(t * 0.4) * 0.003;
         c.group.rotation.x += c.rx; c.group.rotation.y += c.ry; c.group.rotation.z += c.rz;
         if (c.group.position.x < 2 || c.group.position.x > 12) c.vx *= -1;
-        if (Math.abs(c.group.position.y) > 9)  c.vy *= -1;
+        if (Math.abs(c.group.position.y) > 9) c.vy *= -1;
       });
 
       helix.rotation.y = t * 0.16;

@@ -1,11 +1,9 @@
 import { useMemo, useState } from 'react';
-import { useReveal } from '../hooks/useReveal';
 import { CATEGORIES, PRODUCTS } from '../lib/data';
 import type { Product } from '../types';
 import './Products.css';
 
 export default function Products() {
-  const { ref: r1, visible: v1 } = useReveal();
   const [query, setQuery] = useState('');
   const [category, setCategory] = useState('All');
   const [selected, setSelected] = useState<Product | null>(null);
@@ -42,7 +40,7 @@ export default function Products() {
 
       <section className="section">
         <div className="container">
-          <div ref={r1} className={`reveal ${v1 ? 'visible' : ''}`}>
+          <div>
             <div className="products-toolbar">
               <div className="search-wrap">
                 <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -97,7 +95,7 @@ export default function Products() {
                     key={p.id}
                     role="button"
                     tabIndex={0}
-                    className={`card product-full-card reveal d${(i % 3) + 1} ${v1 ? 'visible' : ''}`}
+                    className={`card product-full-card`}
                     onClick={() => setSelected(p)}
                     onKeyDown={(e) => e.key === 'Enter' && setSelected(p)}
                   >
@@ -109,11 +107,7 @@ export default function Products() {
                       )}
                     </div>
                     <div className="pfc-body">
-                      {p.nameImage ? (
-                        <img src={p.nameImage} alt={p.name} className="pfc-name-img" />
-                      ) : (
-                        <div className="pfc-name">{p.name}</div>
-                      )}
+                      <div className="pfc-name">{p.name}</div>
                       <div className="pfc-comp">
                         {p.form ? `${p.form} · ` : ''}
                         {p.composition}
