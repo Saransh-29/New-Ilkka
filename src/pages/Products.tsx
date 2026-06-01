@@ -40,89 +40,88 @@ export default function Products() {
 
       <section className="section">
         <div className="container">
-          <div>
-            <div className="products-toolbar">
-              <div className="search-wrap">
-                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-                  <circle cx="11" cy="11" r="8" />
-                  <path d="m21 21-4.3-4.3" />
-                </svg>
-                <input
-                  type="search"
-                  placeholder="Search products..."
-                  value={query}
-                  onChange={(e) => setQuery(e.target.value)}
-                />
-              </div>
-              <div className="products-count">{filtered.length} products</div>
+          <div className="products-toolbar">
+            <div className="search-wrap">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <circle cx="11" cy="11" r="8" />
+                <path d="m21 21-4.3-4.3" />
+              </svg>
+              <input
+                type="search"
+                placeholder="Search products..."
+                value={query}
+                onChange={(e) => setQuery(e.target.value)}
+              />
             </div>
+            <div className="products-count">{filtered.length} products</div>
+          </div>
 
-            <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', marginBottom: '32px' }}>
-              {CATEGORIES.map((cat) => (
-                <button
-                  key={cat}
-                  type="button"
-                  className={`btn ${category === cat ? 'btn-primary' : 'btn-outline'}`}
-                  onClick={() => setCategory(cat)}
-                  style={{ padding: '8px 18px', fontSize: '0.75rem' }}
-                >
-                  <span>
-                    {cat === 'All' ? 'All' : cat === 'gynaecology' ? 'Gynaecology' : 'Infertility'}
-                  </span>
-                </button>
-              ))}
+          <div style={{ display: 'flex', gap: '10px', flexWrap: 'wrap', marginBottom: '32px' }}>
+            {CATEGORIES.map((cat) => (
+              <button
+                key={cat}
+                type="button"
+                className={`btn ${category === cat ? 'btn-primary' : 'btn-outline'}`}
+                onClick={() => setCategory(cat)}
+                style={{ padding: '8px 18px', fontSize: '0.75rem' }}
+              >
+                <span>
+                  {cat === 'All' ? 'All' : cat === 'gynaecology' ? 'Gynaecology' : 'Infertility'}
+                </span>
+              </button>
+            ))}
+          </div>
+
+          {filtered.length === 0 ? (
+            <div className="no-results">
+              <div className="no-results-icon">🔍</div>
+              <p>No products match your search.</p>
+              <button
+                type="button"
+                className="btn btn-outline"
+                onClick={() => { setQuery(''); setCategory('All'); }}
+              >
+                <span>Clear filters</span>
+              </button>
             </div>
-
-            {filtered.length === 0 ? (
-              <div className="no-results">
-                <div className="no-results-icon">🔍</div>
-                <p>No products match your search.</p>
-                <button
-                  type="button"
-                  className="btn btn-outline"
-                  onClick={() => {
-                    setQuery('');
-                    setCategory('All');
-                  }}
+          ) : (
+            <div className="products-grid">
+              {filtered.map((p) => (
+                <div
+                  key={p.id}
+                  role="button"
+                  tabIndex={0}
+                  className="card product-full-card"
+                  onClick={() => setSelected(p)}
+                  onKeyDown={(e) => e.key === 'Enter' && setSelected(p)}
                 >
-                  <span>Clear filters</span>
-                </button>
-              </div>
-            ) : (
-              <div className="products-grid">
-                {filtered.map((p, i) => (
-                  <div
-                    key={p.id}
-                    role="button"
-                    tabIndex={0}
-                    className={`card product-full-card`}
-                    onClick={() => setSelected(p)}
-                    onKeyDown={(e) => e.key === 'Enter' && setSelected(p)}
-                  >
-                    <div className="pfc-img" style={{ background: p.color }}>
-                      {p.image ? (
-                        <img src={p.image} alt={p.name} className="pfc-photo" />
-                      ) : (
-                        <div className="pfc-circle" />
-                      )}
-                    </div>
-                    <div className="pfc-body">
+                  <div className="pfc-img" style={{ background: p.color }}>
+                    {p.image ? (
+                      <img src={p.image} alt={p.name} className="pfc-photo" />
+                    ) : (
+                      <div className="pfc-circle" />
+                    )}
+                  </div>
+                  <div className="pfc-body">
+                    {p.nameImage ? (
+                      <img src={p.nameImage} alt={p.name} className="pfc-name-img" />
+                    ) : (
                       <div className="pfc-name">{p.name}</div>
-                      <div className="pfc-comp">
-                        {p.form ? `${p.form} · ` : ''}
-                        {p.composition}
-                      </div>
-                      <p className="pfc-desc">{p.description}</p>
-                      <div className="pfc-footer">
-                        <span className="pfc-ind">{p.indication}</span>
-                        <span className="pfc-btn">Details →</span>
-                      </div>
+                    )}
+                    <div className="pfc-comp">
+                      {p.form ? `${p.form} · ` : ''}
+                      {p.composition}
+                    </div>
+                    <p className="pfc-desc">{p.description}</p>
+                    <div className="pfc-footer">
+                      <span className="pfc-ind">{p.indication}</span>
+                      <span className="pfc-btn">Details →</span>
                     </div>
                   </div>
-                ))}
-              </div>
-            )}
-          </div>
+                </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
