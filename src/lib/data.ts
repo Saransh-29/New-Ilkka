@@ -43,7 +43,7 @@ export const PRODUCTS: Product[] = [
     composition: 'L-Methylfolate 1 mg + Methylcobalamin 1500 mcg + Pyridoxal-5-Phosphate 0.5 mg',
     indication: '1st trimester — NTD, REPL, congenital abnormalities',
     color: '#fde8ef',
-    image: '/products/catalog/product_03.png',
+    image: '/products/Ilkka products/FOLL 9.png',
     nameImage: '/products/p_name/foll9.png',
   },
   {
@@ -56,7 +56,7 @@ export const PRODUCTS: Product[] = [
     composition: 'LMF 1 mg + Methylcobalamin 1500 mcg + P5P 0.5 mg + DHA (40%) 200 mg + Vitamin D3 2000 IU',
     indication: '2nd trimester to lactation — IUGR, pre-eclampsia, pre-term birth',
     color: '#e8eef8',
-    image: '/products/catalog/product_04.png',
+    image: '/products/Ilkka products/FOLL 9D.png',
     nameImage: '/products/p_name/foll9D.png',
   },
   {
@@ -69,7 +69,7 @@ export const PRODUCTS: Product[] = [
     composition: 'Doxylamine Succinate 20 mg + Pyridoxine 20 mg + Folic Acid 5 mg',
     indication: 'Nausea & vomiting in pregnancy',
     color: '#e0f0fc',
-    image: '/products/catalog/product_05.png',
+    image: '/products/Ilkka products/FOLL 9 NV.png',
     nameImage: '/products/p_name/foll9NV.png',
   },
   {
@@ -95,9 +95,24 @@ export const PRODUCTS: Product[] = [
     composition: 'Natural Micronised Progesterone SR 200 / 300 mg',
     indication: 'BOH, LPD, LPS in ART, DUB, secondary amenorrhea',
     color: '#e5f5e8',
-    image: '/products/catalog/product_12.jpeg',
+    image: '/products/Ilkka products/ILCAGEST SR 200.png',
     nameImage: '/products/p_name/ilcagestSR.png',
   },
+
+  {
+    id: 'ilcagest-sr',
+    name: 'ilcagest-SR',
+    category: 'gynaecology',
+    tag: 'Gynaecology',
+    form: 'Tablet',
+    description: 'Natural micronised progesterone sustained release — spreading the eternal bliss of motherhood.',
+    composition: 'Natural Micronised Progesterone SR 200 / 300 mg',
+    indication: 'BOH, LPD, LPS in ART, DUB, secondary amenorrhea',
+    color: '#e5f5e8',
+    image: '/products/Ilkka products/ILCAGEST SR 300.png',
+    nameImage: '/products/p_name/ilcagestSR.png',
+  },
+
   {
     id: 'ilca-d3',
     name: 'ILCA-D3 60K',
@@ -108,7 +123,7 @@ export const PRODUCTS: Product[] = [
     composition: 'Cholecalciferol USP 60,000 IU Softgel Capsules',
     indication: 'Vitamin D deficiency, bone health, immunity',
     color: '#fff3e6',
-    image: '/products/catalog/product_14.jpeg',
+    image: '/products/Ilkka products/ILKA D3.png',
     nameImage: '/products/p_name/ilcaD3.png',
   },
   {
@@ -121,7 +136,7 @@ export const PRODUCTS: Product[] = [
     composition: 'Ferrous Ascorbate (elemental Iron 100 mg) + Folic acid 1.5 mg + Zinc 22.5 mg',
     indication: 'Anaemia in pregnancy & lactation',
     color: '#fde8e8',
-    image: '/products/catalog/product_17.png',
+    image: '/products/Ilkka products/ROSSO XT.png',
     nameImage: '/products/p_name/rossoXT.png',
   },
   {
@@ -134,7 +149,7 @@ export const PRODUCTS: Product[] = [
     composition: 'Coral Calcium 750 mg (eq. elemental Calcium 225 mg) + Vitamin D3 500 IU',
     indication: 'Pregnancy, lactation, low back pain, post-menopausal osteoporosis',
     color: '#fce8ec',
-    image: '/products/catalog/product_19.png',
+    image: '/products/Ilkka products/ILCAL.png',
     nameImage: '/products/p_name/ilcal.png',
   },
   {
@@ -147,7 +162,7 @@ export const PRODUCTS: Product[] = [
     composition: 'Micronised L-Arginine 3 gm + Proanthocyanidin 75 mg',
     indication: 'Pregnancy support, IUGR, poor ovarian responders',
     color: '#fce8f5',
-    image: '/products/catalog/product_20.png',
+    image: '/products/Ilkka products/ILPREG.png',
     nameImage: '/products/p_name/ilpregSachet.png',
   },
   {
@@ -160,7 +175,7 @@ export const PRODUCTS: Product[] = [
     composition: 'Myo-inositol 550 mg + D-chiro-inositol 13.8 mg + Berberine + Grape seed extract + Chromium + LMF + NAC + Vit D3',
     indication: 'PCOS — insulin resistance, ovulation, embryo quality',
     color: '#fde8f8',
-    image: '/products/catalog/product_24.jpeg',
+    image: '/products/Ilkka products/MAYONIKA.png',
     nameImage: '/products/p_name/mayonika.png',
   },
   {
@@ -173,7 +188,7 @@ export const PRODUCTS: Product[] = [
     composition: 'Myo-Inositol 1100 mg + D-Chiro-Inositol 27.6 mg + Bioprin + NAC + Vit D3 1000 IU (and supporting actives)',
     indication: 'PCOS/PCOD, irregular menses, diabetic women improving conception',
     color: '#fff0e6',
-    image: '/products/catalog/product_26.jpeg',
+    image: '/products/Ilkka products/MAYONIKA DS.png',
     nameImage: '/products/p_name/mayonikaDS.png',
   },
   {
@@ -186,7 +201,7 @@ export const PRODUCTS: Product[] = [
     composition: 'Lactobacillus 6 strains + Bifidobacterium + FOS 100 mg + Lactoferrin 50 mg',
     indication: 'ART outcomes, PCOS, BV, endometriosis, UTI, PID',
     color: '#f5e8f0',
-    image: '/products/catalog/product_29.jpeg',
+    image: '/products/Ilkka products/UTIKA LL.png',
     nameImage: '/products/p_name/utikaLL.png',
   },
   {
@@ -199,7 +214,7 @@ export const PRODUCTS: Product[] = [
     composition: 'Cranberry extract 200 mg + D-Mannose 300 mg + Potassium-Magnesium Citrate 978 mg per 15 ml',
     indication: 'Recurrent UTI, renal calculus, burning micturition',
     color: '#e8f5fa',
-    image: '/products/catalog/product_30.png',
+    image: '/products/Ilkka products/UTIKA SUS.png',
     nameImage: '/products/p_name/utikaSuspension.png',
   },
   {
@@ -212,7 +227,7 @@ export const PRODUCTS: Product[] = [
     composition: 'Cranberry Extract 200 mg + Hibiscus Sabdariffa 100 mg + D-Mannose 200 mg',
     indication: 'Urinary tract infection — prevention & recurrence',
     color: '#f0ebe8',
-    image: '/products/catalog/product_31.png',
+    image: '/products/Ilkka products/UTIKA TAB.png',
     nameImage: '/products/p_name/utikaTablet.png',
   },
   {
@@ -225,7 +240,7 @@ export const PRODUCTS: Product[] = [
     composition: 'Ayurvedic uterine tonic formulation (as per label)',
     indication: 'Dysfunctional bleeding, menorrhagia, leucorrhoea, menstrual disorders',
     color: '#fff8e6',
-    image: '/products/catalog/product_32.png',
+    image: '/products/Ilkka products/UTIKA SYRUP.png',
     nameImage: '/products/p_name/utikaSyrup.png',
   },
   {
@@ -238,7 +253,7 @@ export const PRODUCTS: Product[] = [
     composition: 'High-quality protein (PDCAAS 1) + vitamins, minerals, colostrum, GLA, DHA',
     indication: 'Pregnancy & lactation nutrition',
     color: '#fde8ea',
-    image: '/products/catalog/product_33.jpeg',
+    image: '/products/Ilkka products/PROTIKA.png',
     nameImage: '/products/p_name/protika.png',
   },
   {
@@ -251,7 +266,7 @@ export const PRODUCTS: Product[] = [
     composition: 'CoQ10 200 mg + Astaxanthin 18 mg + L-Carnitine + Vitamin E + Lycopene + Zinc + Selenium + Glutathione',
     indication: 'Male infertility — sperm count, motility, morphology',
     color: '#ebe8f8',
-    image: '/products/catalog/product_07.png',
+    image: '/products/Ilkka products/CREPITER.png',
     nameImage: '/products/p_name/crepiter.png',
   },
   {
@@ -264,7 +279,7 @@ export const PRODUCTS: Product[] = [
     composition: 'DHEA 75 mg + Ubiquinol 100 mg + Piperine + LMF + B12 + P5P + Vitamin D3 600 IU (Drcaps®)',
     indication: 'DOR, POR, advanced maternal age, PCOS, recurrent IVF failure',
     color: '#ede8f5',
-    image: '/products/catalog/product_22.png',
+    image: '/products/Ilkka products/ILCADHEA.png',
     nameImage: '/products/p_name/ilcadhea.png',
   },
   {
@@ -277,7 +292,7 @@ export const PRODUCTS: Product[] = [
     composition: 'Letrozole Tablets IP 2.5 mg',
     indication: 'Ovulation induction — PCOS, CC-resistant cases, IVF protocols',
     color: '#e8f0fa',
-    image: '/products/catalog/product_28.jpeg',
+    image: '/products/Ilkka products/ILTROZ.png',
     nameImage: '/products/p_name/iltroz.png',
   },
 ];
