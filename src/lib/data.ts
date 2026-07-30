@@ -82,7 +82,7 @@ export const PRODUCTS: Product[] = [
     composition: 'Dydrogesterone Tablets IP 10 mg',
     indication: 'Luteal support, threatened pregnancy loss, habitual miscarriage',
     color: '#fce8f3',
-    image: '/products/catalog/product_10.jpeg',
+    image: '/products/Ilkka products/ILCAGESTON.png',
     nameImage: '/products/p_name/ilcageston10.png',
   },
   {
@@ -295,6 +295,22 @@ export const PRODUCTS: Product[] = [
     image: '/products/Ilkka products/ILTROZ.png',
     nameImage: '/products/p_name/iltroz.png',
   },
+
+  // {
+  //   id: 'leucika',
+  //   name: 'Leucika',
+  //   category: 'gynaecology',
+  //   tag: 'Gynaecology',
+  //   form: 'Tablet',
+  //   description: 'Lifts the chances of ovulation safely & effectively in CC-resistant anovulatory infertility.',
+  //   composition: 'Letrozole Tablets IP 2.5 mg',
+  //   indication: 'Ovulation induction — PCOS, CC-resistant cases, IVF protocols',
+  //   color: '#e8f0fa',
+  //   image: '/products/Ilkka products/ILTROZ.png',
+  //   nameImage: '/products/p_name/iltroz.png',
+  // },
+
+
 ];
 
 export const CATEGORIES = ['All', 'gynaecology', 'infertility'];
