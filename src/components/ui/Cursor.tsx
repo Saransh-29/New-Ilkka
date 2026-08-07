@@ -8,44 +8,85 @@ export default function Cursor() {
   const ring = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    let mx = 0, my = 0, rx = 0, ry = 0, raf = 0;
+    let mx = -100,
+      my = -100,
+      rx = -100,
+      ry = -100,
+      raf = 0;
+    let initialized = false;
 
     const onMove = (e: MouseEvent) => {
-      mx = e.clientX; my = e.clientY;
+      mx = e.clientX;
+      my = e.clientY;
+
+      if (!initialized) {
+        initialized = true;
+        rx = mx;
+        ry = my;
+        dot.current?.classList.add('visible');
+        ring.current?.classList.add('visible');
+      }
+
       if (dot.current) {
         dot.current.style.left = mx + 'px';
-        dot.current.style.top  = my + 'px';
+        dot.current.style.top = my + 'px';
       }
     };
 
     const tick = () => {
-      rx += (mx - rx) * 0.13;
-      ry += (my - ry) * 0.13;
+      rx += (mx - rx) * 0.15;
+      ry += (my - ry) * 0.15;
       if (ring.current) {
         ring.current.style.left = rx + 'px';
-        ring.current.style.top  = ry + 'px';
+        ring.current.style.top = ry + 'px';
       }
       raf = requestAnimationFrame(tick);
     };
 
-    const onEnter = () => { dot.current?.classList.add('h'); ring.current?.classList.add('h'); };
-    const onLeave = () => { dot.current?.classList.remove('h'); ring.current?.classList.remove('h'); };
+    const onDocLeave = () => {
+      dot.current?.classList.remove('visible');
+      ring.current?.classList.remove('visible');
+    };
 
-    document.addEventListener('mousemove', onMove);
+    const onDocEnter = () => {
+      if (initialized) {
+        dot.current?.classList.add('visible');
+        ring.current?.classList.add('visible');
+      }
+    };
+
+    const onEnter = () => {
+      dot.current?.classList.add('h');
+      ring.current?.classList.add('h');
+    };
+
+    const onLeave = () => {
+      dot.current?.classList.remove('h');
+      ring.current?.classList.remove('h');
+    };
+
+    window.addEventListener('mousemove', onMove, { passive: true });
+    document.addEventListener('mouseleave', onDocLeave);
+    document.addEventListener('mouseenter', onDocEnter);
     raf = requestAnimationFrame(tick);
 
     const bind = () => {
-      document.querySelectorAll('a,button').forEach(el => {
-        el.addEventListener('mouseenter', onEnter);
-        el.addEventListener('mouseleave', onLeave);
-      });
+      document
+        .querySelectorAll('a, button, input, textarea, [role="button"]')
+        .forEach((el) => {
+          el.addEventListener('mouseenter', onEnter);
+          el.addEventListener('mouseleave', onLeave);
+        });
     };
     bind();
+
     const mo = new MutationObserver(bind);
     mo.observe(document.body, { childList: true, subtree: true });
 
     return () => {
-      document.removeEventListener('mousemove', onMove);
+      window.removeEventListener('mousemove', onMove);
+      document.removeEventListener('mouseleave', onDocLeave);
+      document.removeEventListener('mouseenter', onDocEnter);
       cancelAnimationFrame(raf);
       mo.disconnect();
     };
