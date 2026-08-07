@@ -7,16 +7,27 @@ export default function MolecularScene() {
   const mountRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
-    if (window.innerWidth < 900) return; // skip Three.js entirely on mobile
+    if (typeof window === 'undefined') return;
+    if (window.innerWidth < 600) return; // skip Three.js only on small mobile screens
 
-    const mount = mountRef.current!;
-    const W = mount.clientWidth || 600;
-    const H = mount.clientHeight || 500;
+    const mount = mountRef.current;
+    if (!mount) return;
 
-    const renderer = new THREE.WebGLRenderer({ antialias: false, alpha: true });
-    renderer.setPixelRatio(1); // force 1x on all devices for performance
+    const getW = () => mount.clientWidth || window.innerWidth * 0.45 || 600;
+    const getH = () => mount.clientHeight || window.innerHeight || 500;
+
+    let W = getW();
+    let H = getH();
+
+    const renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+    renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     renderer.setSize(W, H);
     renderer.setClearColor(0x000000, 0);
+
+    // Clean up existing elements if any
+    while (mount.firstChild) {
+      mount.removeChild(mount.firstChild);
+    }
     mount.appendChild(renderer.domElement);
 
     const scene = new THREE.Scene();
@@ -124,14 +135,17 @@ export default function MolecularScene() {
     // ── Mouse ──
     let mx2 = 0, my2 = 0;
     const onMouse = (e: MouseEvent) => { mx2 = (e.clientX / window.innerWidth - 0.5) * 2; my2 = (e.clientY / window.innerHeight - 0.5) * 2; };
-    window.addEventListener('mousemove', onMouse);
+    window.addEventListener('mousemove', onMouse, { passive: true });
 
     // ── Resize ──
     const onResize = () => {
-      const w = mount.clientWidth, h = mount.clientHeight;
-      renderer.setSize(w, h); camera.aspect = w / h; camera.updateProjectionMatrix();
+      if (!mount) return;
+      const w = getW(), h = getH();
+      renderer.setSize(w, h);
+      camera.aspect = w / h;
+      camera.updateProjectionMatrix();
     };
-    window.addEventListener('resize', onResize);
+    window.addEventListener('resize', onResize, { passive: true });
 
     let t = 0, rafId = 0;
     const animate = () => {
@@ -172,7 +186,7 @@ export default function MolecularScene() {
       window.removeEventListener('mousemove', onMouse);
       window.removeEventListener('resize', onResize);
       renderer.dispose();
-      if (mount.contains(renderer.domElement)) mount.removeChild(renderer.domElement);
+      if (mount && mount.contains(renderer.domElement)) mount.removeChild(renderer.domElement);
     };
   }, []);
 
