@@ -45,9 +45,9 @@
 
 *,*::before,*::after { box-sizing:border-box; margin:0; padding:0; }
 html { scroll-behavior:smooth; font-size:16px; -webkit-font-smoothing:antialiased; }
-body { background:var(--ivory); color:var(--g-deep); font-family:var(--fb); overflow-x:hidden; cursor:none; }
+body { background:var(--ivory); color:var(--g-deep); font-family:var(--fb); overflow-x:hidden; }
 a { text-decoration:none; color:inherit; }
-button { cursor:none; border:none; background:none; font-family:inherit; }
+button { border:none; background:none; font-family:inherit; }
 img { display:block; max-width:100%; }
 ul { list-style:none; }
 input,textarea,select { font-family:inherit; }
@@ -235,7 +235,18 @@ input,textarea,select { font-family:inherit; }
   background:var(--g-deep); color:var(--ivory); border-color:var(--g-deep);
 }
 
-/* ── MOBILE NAV HIDDEN ── */
-@media(max-width:1100px){
-  body { cursor:auto; }
+/* ── CURSOR MEDIA QUERIES ── */
+@media (pointer: fine) and (min-width: 901px) {
+  body, body *, a, button, input[type="submit"] {
+    cursor: none !important;
+  }
+}
+
+@media (pointer: coarse), (max-width: 900px) {
+  body, body *, a, button, input, textarea, select {
+    cursor: auto !important;
+  }
+  .c-dot, .c-ring {
+    display: none !important;
+  }
 }
