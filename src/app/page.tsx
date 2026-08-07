@@ -1,9 +1,11 @@
+'use client';
+
 import { useEffect, useRef } from 'react';
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import MolecularScene from '../components/three/MolecularScene';
 import { useReveal } from '../hooks/useReveal';
 import { BLOGS, COMPANY, PORTFOLIO_AREAS, PRODUCTS } from '../lib/data';
-import './Home.css';
+import '../styles/Home.css';
 
 function StatCard({ val, sup, label, delay }: { val: string; sup?: string; label: string; delay: string }) {
   const { ref, visible } = useReveal();
@@ -56,8 +58,8 @@ export default function Home() {
             </h1>
             <p className="hero-sub lead">ILKKA Healthcare Private Limited delivers high-quality, affordable medicines in Gynaecology and Infertility — guided by integrity, innovation, and ethical practice.</p>
             <div className="hero-btns">
-              <Link to="/products" className="btn btn-primary"><span>Explore Products</span></Link>
-              <Link to="/research" className="btn btn-outline"><span>Our Research →</span></Link>
+              <Link href="/products" className="btn btn-primary"><span>Explore Products</span></Link>
+              <Link href="/research" className="btn btn-outline"><span>Our Research →</span></Link>
             </div>
             <div className="hero-trust">
               {['WHO-GMP Practices', 'ISO Compliant', 'Gynaecology', 'Infertility'].map(t => (
@@ -142,13 +144,13 @@ export default function Home() {
                     <div className="product-name">{p.name}</div>
                   )}
                   <p className="product-desc">{p.description}</p>
-                  <Link to="/products" className="product-link">View Details →</Link>
+                  <Link href="/products" className="product-link">View Details →</Link>
                 </div>
               </div>
             ))}
           </div>
           <div style={{ textAlign: 'center', marginTop: '48px' }}>
-            <Link to="/products" className="btn btn-outline"><span>View Full Catalog</span></Link>
+            <Link href="/products" className="btn btn-outline"><span>View Full Catalog</span></Link>
           </div>
         </div>
       </section>
@@ -162,8 +164,8 @@ export default function Home() {
               <h2 className="display display-light">Where Science<br />Meets <em>Compassion</em></h2>
               <p className="lead lead-light" style={{ marginBottom: '36px' }}>Our Associate R&D division continuously improves gynaecology and infertility formulations — keeping ILKKA at the forefront of practical, patient-centred innovation.</p>
               <div style={{ display: 'flex', gap: '14px', flexWrap: 'wrap' }}>
-                <Link to="/research" className="btn btn-light"><span>Explore Research →</span></Link>
-                <Link to="/about" className="btn btn-light"><span>About Us</span></Link>
+                <Link href="/research" className="btn btn-light"><span>Explore Research →</span></Link>
+                <Link href="/about" className="btn btn-light"><span>About Us</span></Link>
               </div>
             </div>
             <div className="research-band-stats">
@@ -193,13 +195,13 @@ export default function Home() {
                   <div className="blog-meta"><span className="blog-cat">{b.category}</span><span className="blog-date">{b.date}</span></div>
                   <div className="blog-title">{b.title}</div>
                   <p className="blog-excerpt">{b.excerpt}</p>
-                  <Link to="/blog" className="blog-read">Read Article →</Link>
+                  <Link href="/blog" className="blog-read">Read Article →</Link>
                 </div>
               </div>
             ))}
           </div>
           <div style={{ textAlign: 'center', marginTop: '48px' }}>
-            <Link to="/blog" className="btn btn-outline"><span>All Insights</span></Link>
+            <Link href="/blog" className="btn btn-outline"><span>All Insights</span></Link>
           </div>
         </div>
       </section>
@@ -222,8 +224,8 @@ export default function Home() {
           <h2 className="display display-light" style={{ textAlign: 'center' }}>Ready to <em>Partner</em><br />With Us?</h2>
           <p className="lead lead-light" style={{ textAlign: 'center', margin: '0 auto 40px' }}>Connect with our team to explore distribution partnerships, research collaborations, or product enquiries.</p>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
-            <Link to="/contact" className="btn btn-primary"><span>Get In Touch</span></Link>
-            <Link to="/products" className="btn btn-light"><span>Browse Products</span></Link>
+            <Link href="/contact" className="btn btn-primary"><span>Get In Touch</span></Link>
+            <Link href="/products" className="btn btn-light"><span>Browse Products</span></Link>
           </div>
         </div>
       </section>

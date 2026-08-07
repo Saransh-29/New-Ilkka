@@ -1,5 +1,7 @@
-import { useReveal } from '../hooks/useReveal';
-import { JOBS } from '../lib/data';
+'use client';
+
+import { useReveal } from '../../hooks/useReveal';
+import { JOBS } from '../../lib/data';
 
 export default function Careers() {
   const { ref: r1, visible: v1 } = useReveal();

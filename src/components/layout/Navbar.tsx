@@ -1,5 +1,8 @@
+'use client';
+
 import { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import BrandLogo from '../BrandLogo';
 import { useNavScroll } from '../../hooks/useReveal';
 import { NAV_LINKS } from '../../lib/data';
@@ -7,8 +10,11 @@ import './Navbar.css';
 
 export default function Navbar() {
   const scrolled = useNavScroll();
-  const { pathname } = useLocation();
+  const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
+
+  // Apply frosted glass background when scrolled or on inner pages
+  const showBackground = scrolled || pathname !== '/';
 
   // Close menu on route change
   useEffect(() => { setMenuOpen(false); }, [pathname]);
@@ -22,7 +28,7 @@ export default function Navbar() {
   return (
     <>
       <nav className={`navbar${scrolled ? ' scrolled' : ''}${menuOpen ? ' menu-open' : ''}`}>
-        <Link to="/" className="nav-logo">
+        <Link href="/" className="nav-logo">
           <BrandLogo className="nav-logo-img" />
         </Link>
 
@@ -31,7 +37,7 @@ export default function Navbar() {
           {NAV_LINKS.map(l => (
             <li key={l.path}>
               <Link
-                to={l.path}
+                href={l.path}
                 className={`nav-link${l.path === '/contact' ? ' nav-cta' : ''}${pathname === l.path ? ' active' : ''}`}
               >
                 <span>{l.label}</span>
@@ -56,7 +62,7 @@ export default function Navbar() {
           {NAV_LINKS.map(l => (
             <li key={l.path}>
               <Link
-                to={l.path}
+                href={l.path}
                 className={`mobile-nav-link${l.path === '/contact' ? ' mobile-nav-cta' : ''}${pathname === l.path ? ' active' : ''}`}
                 onClick={() => setMenuOpen(false)}
               >

@@ -1,4 +1,15 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@200;300;400;500&family=Syne:wght@400;600;700;800&display=swap');
+@import '../components/layout/Navbar.css';
+@import '../components/layout/Footer.css';
+@import '../components/ui/Cursor.css';
+@import '../components/three/MolecularScene.css';
+@import './brand-logo.css';
+@import './Home.css';
+@import './About.css';
+@import './CeoDesk.css';
+@import './Products.css';
+@import './Research.css';
+@import './Manufacturing.css';
 
 :root {
   --g-deep:   #152b1f;

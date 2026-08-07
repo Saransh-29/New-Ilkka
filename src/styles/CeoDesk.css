@@ -1,0 +1,96 @@
+/* ── LETTER LAYOUT ── */
+.ceo-letter-grid {
+  display: grid;
+  grid-template-columns: 300px 1fr;
+  gap: 72px;
+  align-items: start;
+}
+
+/* ── PORTRAIT ── */
+.ceo-portrait-col {
+  position: sticky;
+  top: calc(var(--nav-h) + 32px);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+.ceo-portrait {
+  width: 220px; height: 220px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--g-deep) 0%, var(--g-mid) 100%);
+  display: flex; align-items: center; justify-content: center;
+  position: relative; overflow: hidden;
+  box-shadow: var(--sh-d);
+}
+.ceo-portrait-glow {
+  position: absolute; inset: -20%;
+  background: radial-gradient(circle at 30% 30%, rgba(168,200,182,0.35) 0%, transparent 60%);
+  animation: ceoGlow 8s ease-in-out infinite;
+}
+@keyframes ceoGlow {
+  0%, 100% { transform: rotate(0deg); }
+  50% { transform: rotate(180deg); }
+}
+.ceo-mark {
+  position: relative; z-index: 1;
+  font-family: var(--fd); font-size: 2.6rem; font-weight: 400; font-style: italic;
+  color: var(--ivory); letter-spacing: 0.02em;
+}
+.ceo-sig-block { margin-top: 28px; }
+.ceo-sig-line {
+  width: 60px; height: 1px; background: var(--g-light);
+  margin: 0 auto 18px;
+}
+.ceo-sig-name {
+  font-family: var(--fd); font-size: 1.4rem; font-style: italic;
+  color: var(--g-deep); margin-bottom: 4px;
+}
+.ceo-sig-role {
+  font-family: var(--fu); font-size: 0.68rem; font-weight: 600;
+  letter-spacing: 0.1em; text-transform: uppercase; color: var(--g-sage);
+}
+
+/* ── LETTER TEXT ── */
+.ceo-letter-col p {
+  font-size: 1.02rem; font-weight: 300; color: var(--g600);
+  line-height: 1.9; margin-bottom: 26px; max-width: 640px;
+}
+.ceo-dropcap::first-letter {
+  font-family: var(--fd); font-size: 4.6rem; font-weight: 400; font-style: italic;
+  color: var(--g-deep); float: left; line-height: 0.8;
+  margin: 6px 12px 0 0;
+}
+
+.ceo-pullquote {
+  font-family: var(--fd); font-size: 1.6rem; font-weight: 300; font-style: italic;
+  color: var(--g-mid); line-height: 1.5; max-width: 560px;
+  padding: 8px 0 8px 28px; margin: 36px 0 40px;
+  border-left: 2px solid var(--g-light);
+}
+
+/* ── CLOSING BAND ── */
+.ceo-closing { max-width: 780px; margin: 0 auto; }
+.ceo-quote-mark {
+  font-family: var(--fd); font-size: 5rem; font-style: italic;
+  color: var(--g-light); line-height: 1; margin-bottom: 8px;
+  opacity: 0.6;
+}
+.ceo-closing-quote { font-size: clamp(1.9rem, 3.4vw, 2.9rem); }
+
+/* ── RESPONSIVE ── */
+@media (max-width: 1000px) {
+  .ceo-letter-grid { grid-template-columns: 1fr; gap: 44px; }
+  .ceo-portrait-col { position: static; flex-direction: row; gap: 24px; text-align: left; }
+  .ceo-portrait { width: 110px; height: 110px; flex-shrink: 0; }
+  .ceo-mark { font-size: 1.5rem; }
+  .ceo-sig-block { margin-top: 0; }
+  .ceo-sig-line { display: none; }
+}
+
+@media (max-width: 600px) {
+  .ceo-portrait-col { flex-direction: column; text-align: center; gap: 16px; }
+  .ceo-sig-line { display: block; }
+  .ceo-dropcap::first-letter { font-size: 3.4rem; }
+  .ceo-pullquote { font-size: 1.3rem; padding-left: 20px; }
+  .ceo-quote-mark { font-size: 3.4rem; }
+}

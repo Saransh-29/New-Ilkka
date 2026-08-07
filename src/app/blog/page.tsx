@@ -1,5 +1,7 @@
-import { useReveal } from '../hooks/useReveal';
-import { BLOGS } from '../lib/data';
+'use client';
+
+import { useReveal } from '../../hooks/useReveal';
+import { BLOGS } from '../../lib/data';
 
 export default function Blog() {
   const { ref: r1, visible: v1 } = useReveal();

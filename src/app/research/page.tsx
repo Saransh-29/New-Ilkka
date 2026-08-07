@@ -1,6 +1,8 @@
-import { Link } from 'react-router-dom';
-import { useReveal } from '../hooks/useReveal';
-import './Research.css';
+'use client';
+
+import Link from 'next/link';
+import { useReveal } from '../../hooks/useReveal';
+import '../../styles/Research.css';
 
 export default function Research() {
   const { ref: r1, visible: v1 } = useReveal();
@@ -66,7 +68,7 @@ export default function Research() {
             <div className="tag tag-light" style={{ justifyContent: 'center' }}>Collaborate</div>
             <h2 className="display display-light">Partner With Our<br/><em>Research Team</em></h2>
             <p className="lead lead-light" style={{ margin: '0 auto 36px', textAlign: 'center' }}>We actively collaborate with academic institutions, biotech companies, and healthcare organizations globally.</p>
-            <Link to="/contact" className="btn btn-primary"><span>Start a Conversation</span></Link>
+            <Link href="/contact" className="btn btn-primary"><span>Start a Conversation</span></Link>
           </div>
         </div>
       </section>

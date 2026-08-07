@@ -1,7 +1,9 @@
-import { Link } from 'react-router-dom';
-import { useReveal } from '../hooks/useReveal';
-import { TEAM, TIMELINE } from '../lib/data';
-import './About.css';
+'use client';
+
+import Link from 'next/link';
+import { useReveal } from '../../hooks/useReveal';
+import { TEAM, TIMELINE } from '../../lib/data';
+import '../../styles/About.css';
 
 export default function About() {
   const { ref: r1, visible: v1 } = useReveal();
@@ -15,7 +17,7 @@ export default function About() {
       <div className="page-hero">
         <div className="container">
           <div className="tag">Who We Are</div>
-          <h1 className="display">A Legacy of<br/><em>Science</em> & Care</h1>
+          <h1 className="display">A Legacy of<br /><em>Science</em> & Care</h1>
           <p className="lead">Established in 2019 and headquartered in Bangalore, ILKKA Healthcare Private Limited is a trusted pharmaceutical partner focused on affordable Gynaecology and Infertility solutions across India.</p>
         </div>
       </div>
@@ -26,7 +28,7 @@ export default function About() {
           <div className="about-mission-grid">
             <div ref={r1} className={`reveal ${v1 ? 'visible' : ''}`}>
               <div className="tag">Mission & Vision</div>
-              <h2 className="display" style={{ fontSize: 'clamp(2rem,3.5vw,3.2rem)' }}>Guided by Purpose.<br/><em>Driven by Science.</em></h2>
+              <h2 className="display" style={{ fontSize: 'clamp(2rem,3.5vw,3.2rem)' }}>Guided by Purpose.<br /><em>Driven by Science.</em></h2>
               <p className="lead" style={{ marginBottom: '24px' }}>
                 <strong>Mission:</strong> To provide safe, reliable, and affordable medicines; advance healthcare through innovation and research; uphold the highest ethical and quality standards; and build long-term relationships with healthcare professionals and partners.
               </p>
@@ -58,7 +60,7 @@ export default function About() {
         <div className="container">
           <div ref={r2} className={`reveal ${v2 ? 'visible' : ''}`}>
             <div className="tag">Our Journey</div>
-            <h2 className="display">Milestones That<br/><em>Shaped</em> Us</h2>
+            <h2 className="display">Milestones That<br /><em>Shaped</em> Us</h2>
           </div>
           <div className="timeline">
             {TIMELINE.map((item, i) => (
@@ -80,10 +82,10 @@ export default function About() {
         <div className="container">
           <div ref={r3} className={`reveal ${v3 ? 'visible' : ''}`}>
             <div className="tag">Accreditations</div>
-            <h2 className="display">Certified. Trusted.<br/><em>Recognised.</em></h2>
+            <h2 className="display">Certified. Trusted.<br /><em>Recognised.</em></h2>
           </div>
           <div className="cert-grid">
-            {[['WHO-GMP','Good Manufacturing Practice aligned operations'],['ISO Compliant','Quality management & regulatory compliance'],['Integrity','Honest, transparent business conduct'],['Innovation','Advanced, effective formulations'],['Quality','Excellence in every product'],['Customer Focus','Patients and partners first']].map(([code, desc]) => (
+            {[['WHO-GMP', 'Good Manufacturing Practice aligned operations'], ['ISO Compliant', 'Quality management & regulatory compliance'], ['Integrity', 'Honest, transparent business conduct'], ['Innovation', 'Advanced, effective formulations'], ['Quality', 'Excellence in every product'], ['Customer Focus', 'Patients and partners first']].map(([code, desc]) => (
               <div key={code} className={`cert-card reveal ${v3 ? 'visible' : ''}`}>
                 <div className="cert-code">{code}</div>
                 <div className="cert-desc">{desc}</div>
@@ -98,7 +100,8 @@ export default function About() {
         <div className="container">
           <div ref={r4} className={`reveal ${v4 ? 'visible' : ''}`}>
             <div className="tag">Leadership</div>
-            <h2 className="display">The Minds Behind<br/>the <em>Mission</em></h2>
+            <h2 className="display">The Minds Behind<br />the <em>Mission</em></h2>
+            <Link href="/ceo-desk" className="btn btn-outline" style={{ marginTop: '8px' }}><span>Read a Message from Our CEO</span></Link>
           </div>
           <div className="team-grid">
             {TEAM.map((m, i) => (
@@ -120,10 +123,10 @@ export default function About() {
       <section className="dark-band">
         <div className="container" style={{ textAlign: 'center' }}>
           <div className="tag tag-light" style={{ justifyContent: 'center' }}>Join Our Mission</div>
-          <h2 className="display display-light">Want to Build the Future<br/>of <em>Healthcare</em> With Us?</h2>
+          <h2 className="display display-light">Want to Build the Future<br />of <em>Healthcare</em> With Us?</h2>
           <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', marginTop: '36px', flexWrap: 'wrap' }}>
-            <Link to="/careers" className="btn btn-primary"><span>View Open Roles</span></Link>
-            <Link to="/contact" className="btn btn-light"><span>Get In Touch</span></Link>
+            <Link href="/careers" className="btn btn-primary"><span>View Open Roles</span></Link>
+            <Link href="/contact" className="btn btn-light"><span>Get In Touch</span></Link>
           </div>
         </div>
       </section>

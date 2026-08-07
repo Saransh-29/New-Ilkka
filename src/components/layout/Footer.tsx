@@ -1,4 +1,4 @@
-import { Link } from 'react-router-dom';
+import Link from 'next/link';
 import BrandLogo from '../BrandLogo';
 import { COMPANY } from '../../lib/data';
 import './Footer.css';
@@ -8,7 +8,7 @@ export default function Footer() {
     <footer className="footer">
       <div className="footer-top container">
         <div className="footer-brand">
-          <Link to="/" className="footer-logo">
+          <Link href="/" className="footer-logo">
             <BrandLogo className="footer-logo-img" />
           </Link>
           <p>
@@ -23,20 +23,21 @@ export default function Footer() {
         </div>
         <div className="footer-col">
           <h4>Company</h4>
-          <Link to="/about">About Us</Link>
-          <Link to="/manufacturing">Manufacturing</Link>
-          <Link to="/sustainability">Sustainability</Link>
-          <Link to="/careers">Careers</Link>
+          <Link href="/about">About Us</Link>
+          <Link href="/ceo-desk">CEO's Desk</Link>
+          <Link href="/manufacturing">Manufacturing</Link>
+          <Link href="/sustainability">Sustainability</Link>
+          <Link href="/careers">Careers</Link>
         </div>
         <div className="footer-col">
           <h4>Science</h4>
-          <Link to="/research">Research & Innovation</Link>
-          <Link to="/products">Products</Link>
-          <Link to="/blog">Insights</Link>
+          <Link href="/research">Research & Innovation</Link>
+          <Link href="/products">Products</Link>
+          <Link href="/blog">Insights</Link>
         </div>
         <div className="footer-col">
           <h4>Connect</h4>
-          <Link to="/contact">Contact Us</Link>
+          <Link href="/contact">Contact Us</Link>
           <a href="#">LinkedIn</a>
           <a href="#">Twitter / X</a>
         </div>

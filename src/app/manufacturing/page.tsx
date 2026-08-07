@@ -1,5 +1,7 @@
-import { useReveal } from '../hooks/useReveal';
-import './Manufacturing.css';
+'use client';
+
+import { useReveal } from '../../hooks/useReveal';
+import '../../styles/Manufacturing.css';
 
 export default function Manufacturing() {
   const { ref: r1, visible: v1 } = useReveal();

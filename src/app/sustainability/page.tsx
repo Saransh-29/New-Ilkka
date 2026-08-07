@@ -1,4 +1,6 @@
-import { useReveal } from '../hooks/useReveal';
+'use client';
+
+import { useReveal } from '../../hooks/useReveal';
 
 export default function Sustainability() {
   const { ref: r1, visible: v1 } = useReveal();

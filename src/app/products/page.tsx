@@ -1,7 +1,9 @@
+'use client';
+
 import { useMemo, useState } from 'react';
-import { CATEGORIES, PRODUCTS } from '../lib/data';
-import type { Product } from '../types';
-import './Products.css';
+import { CATEGORIES, PRODUCTS } from '../../lib/data';
+import type { Product } from '../../types';
+import '../../styles/Products.css';
 
 export default function Products() {
   const [query, setQuery] = useState('');
