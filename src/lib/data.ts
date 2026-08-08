@@ -345,7 +345,7 @@ export const TIMELINE: TimelineItem[] = [
   { year: '2020', title: 'Portfolio Launch', description: 'Introduced core tablets, capsules, and syrups for the domestic Indian market.' },
   { year: '2022', title: 'Expanded Range', description: 'Added infertility-focused formulations including male fertility and ART support.' },
   { year: '2024', title: 'Associate R&D Division', description: 'Formalised research for continuous formulation improvement across therapeutic areas.' },
-  { year: '', title: 'Manufacturing Facility Established ', description: 'Strengthened distribution and partnerships with healthcare professionals across India.' },
+  { year: '', title: 'Manufacturing Facility Established ', description: 'Established a dedicated manufacturing facility to strengthen production capabilities and support a growing portfolio of healthcare solutions.' },
 ];
 
 export const NAV_LINKS = [
