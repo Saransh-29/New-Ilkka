@@ -96,7 +96,7 @@ export const PRODUCTS: Product[] = [
     indication: 'BOH, LPD, LPS in ART, DUB, secondary amenorrhea',
     color: '#e5f5e8',
     image: '/products/Ilkka products/ILCAGEST SR 200.png',
-    nameImage: '/products/p_name/ilcagestSR.png',
+    nameImage: '/products/p_name/ilcagestSR2.png',
   },
 
   {
@@ -110,7 +110,7 @@ export const PRODUCTS: Product[] = [
     indication: 'BOH, LPD, LPS in ART, DUB, secondary amenorrhea',
     color: '#e5f5e8',
     image: '/products/Ilkka products/ILCAGEST SR 300.png',
-    nameImage: '/products/p_name/ilcagestSR.png',
+    nameImage: '/products/p_name/ilcagestSR1.png',
   },
 
   {
@@ -172,7 +172,7 @@ export const PRODUCTS: Product[] = [
     tag: 'Gynaecology',
     form: 'Tablet',
     description: 'Restoring womanhood — effective management of PCOS with 40:1 Myo-Inositol + D-Chiro-Inositol.',
-    composition: 'Myo-inositol 550 mg + D-chiro-inositol 13.8 mg + Berberine + Grape seed extract + Chromium + LMF + NAC + Vit D3',
+    composition: 'Myo-inositol 550 mg + D-chiro-inositol 13.8 mg + Berberine + Grape seed extract + Chromium Picolinate + LMF + NAC + Vit D3',
     indication: 'PCOS — insulin resistance, ovulation, embryo quality',
     color: '#fde8f8',
     image: '/products/Ilkka products/MAYONIKA.png',
@@ -249,7 +249,7 @@ export const PRODUCTS: Product[] = [
     category: 'gynaecology',
     tag: 'Gynaecology',
     form: 'Powder',
-    description: 'Fulfils dream of healthy baby — 27 essential nutrients with colostrum, GLA & DHA. Sugar free.',
+    description: 'Fulfils dream of healthy baby — 27 essential nutrients with colostrum, GLA & DHA. No added Sugar.',
     composition: 'High-quality protein (PDCAAS 1) + vitamins, minerals, colostrum, GLA, DHA',
     indication: 'Pregnancy & lactation nutrition',
     color: '#fde8ea',
@@ -306,7 +306,7 @@ export const PRODUCTS: Product[] = [
   //   composition: 'Letrozole Tablets IP 2.5 mg',
   //   indication: 'Ovulation induction — PCOS, CC-resistant cases, IVF protocols',
   //   color: '#e8f0fa',
-  //   image: '/products/Ilkka products/ILTROZ.png',
+  //   image: '/products/Ilkka products/LEUCIKA.png',
   //   nameImage: '/products/p_name/iltroz.png',
   // },
 
@@ -345,7 +345,7 @@ export const TIMELINE: TimelineItem[] = [
   { year: '2020', title: 'Portfolio Launch', description: 'Introduced core tablets, capsules, and syrups for the domestic Indian market.' },
   { year: '2022', title: 'Expanded Range', description: 'Added infertility-focused formulations including male fertility and ART support.' },
   { year: '2024', title: 'Associate R&D Division', description: 'Formalised research for continuous formulation improvement across therapeutic areas.' },
-  { year: '2025', title: 'Pan-India Presence', description: 'Strengthened distribution and partnerships with healthcare professionals across India.' },
+  { year: '', title: 'Manufacturing Facility Established ', description: 'Strengthened distribution and partnerships with healthcare professionals across India.' },
 ];
 
 export const NAV_LINKS = [
