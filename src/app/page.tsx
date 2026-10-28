@@ -24,6 +24,7 @@ export default function Home() {
   const { ref: s3, visible: v3 } = useReveal();
   const { ref: s4, visible: v4 } = useReveal();
   const { ref: s5, visible: v5 } = useReveal();
+  const { ref: s6, visible: v6 } = useReveal();
 
   useEffect(() => {
     const hero = heroRef.current;
@@ -151,6 +152,33 @@ export default function Home() {
           </div>
           <div style={{ textAlign: 'center', marginTop: '48px' }}>
             <Link href="/products" className="btn btn-outline"><span>View Full Catalog</span></Link>
+          </div>
+        </div>
+      </section>
+
+      {/* ── OUR PARTNERS ── */}
+      <section className="section alliance-section">
+        <div className="container">
+          <div ref={s6} className={`section-head reveal ${v6 ? 'visible' : ''}`}>
+            <div className="tag">Our Partners</div>
+            <h2 className="display">Strategic Manufacturing<br /><em>Partnership</em></h2>
+          </div>
+          <div className={`alliance-grid reveal d1 ${v6 ? 'visible' : ''}`}>
+            <div className="alliance-logo-card">
+              <img src="/partners/akums-logo.jpg" alt="Akums Drugs & Pharmaceuticals Ltd. logo" className="alliance-logo" />
+              <span className="alliance-logo-caption">Manufacturing alliance with Akums — one of India&apos;s best manufacturing companies</span>
+            </div>
+            <div className="alliance-copy">
+              <p className="lead">
+                At ILKKA Healthcare Private Limited, quality, reliability, and operational excellence are at the core of everything we do. We are proud to partner with Akums Drugs &amp; Pharmaceuticals Ltd., India&apos;s leading Contract Development and Manufacturing Organization (CDMO), as our principal manufacturing partner.
+              </p>
+              <p className="lead">
+                Approximately 70% of our pharmaceutical formulations are manufactured by Akums, reflecting the strength and trust of this long-standing strategic alliance. Leveraging Akums&apos; world-class manufacturing infrastructure, advanced technologies, stringent quality systems, and regulatory-compliant facilities, we ensure that every product meets the highest standards of safety, efficacy, and quality.
+              </p>
+              <p className="lead">
+                This collaboration empowers ILKKA Healthcare to deliver a diverse portfolio of high-quality pharmaceutical products with consistency, scalability, and uninterrupted supply while maintaining our commitment to innovation and patient care.
+              </p>
+            </div>
           </div>
         </div>
       </section>

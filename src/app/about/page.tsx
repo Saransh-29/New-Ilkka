@@ -18,7 +18,7 @@ export default function About() {
         <div className="container">
           <div className="tag">Who We Are</div>
           <h1 className="display">A Legacy of<br /><em>Science</em> & Care</h1>
-          <p className="lead">Established in 2019 and headquartered in Bangalore, ILKKA Healthcare Private Limited is a trusted pharmaceutical partner focused on affordable Gynaecology and Infertility solutions across India.</p>
+          <p className="lead">Established in 2019 and headquartered in Bangalore, ILKKA Healthcare Private Limited is a trusted pharmaceutical partner focused on affordable Gynaecology and Infertility solutions across India ILKKA  is one of India’s fastest growing pharmaceutical companies, with an approximate market valuation of ₹70 crore and a strong commitment to provide access to quality healthcare across the country..</p>
         </div>
       </div>
 

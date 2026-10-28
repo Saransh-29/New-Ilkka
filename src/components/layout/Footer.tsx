@@ -39,7 +39,7 @@ export default function Footer() {
           <h4>Connect</h4>
           <Link href="/contact">Contact Us</Link>
           <a href="#">LinkedIn</a>
-          <a href="#">Twitter / X</a>
+          {/* <a href="#">Twitter / X</a> */}
         </div>
       </div>
       <div className="footer-bottom container">
